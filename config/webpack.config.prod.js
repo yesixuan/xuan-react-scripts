@@ -53,6 +53,8 @@ const cssRegex = /\.css$/;
 const cssModuleRegex = /\.module\.css$/;
 const sassRegex = /\.(scss|sass)$/;
 const sassModuleRegex = /\.module\.(scss|sass)$/;
+const stylusRegex = /\.(styl|stylus)$/;
+const stylusModuleRegex = /\.module\.(styl|stylus)$/;
 
 // common function to get style loaders
 const getStyleLoaders = (cssOptions, preProcessor) => {
@@ -430,6 +432,30 @@ module.exports = {
               'sass-loader'
             ),
           },
+            {
+              test: stylusRegex,
+              exclude: stylusModuleRegex,
+              loader: getStyleLoaders(
+                {
+                  importLoaders: 2,
+                  sourceMap: shouldUseSourceMap,
+                },
+                'stylus-loader'
+              ),
+              sideEffects: true,
+            },
+            {
+              test: stylusModuleRegex,
+              loader: getStyleLoaders(
+                {
+                  importLoaders: 2,
+                  sourceMap: shouldUseSourceMap,
+                  modules: true,
+                  getLocalIdent: getCSSModuleLocalIdent,
+                },
+                'stylus-loader'
+              ),
+            },
           // "file" loader makes sure assets end up in the `build` folder.
           // When you `import` an asset, you get its filename.
           // This loader doesn't use a "test" so it will catch all modules
