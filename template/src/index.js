@@ -1,9 +1,19 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom'
+import { createStore, applyMiddleware, compose } from 'redux'
+import { Provider } from 'react-redux'
+import reducers from './store/index'
+
 import './index.css'
 import App from './App'
+import Demo from './components/Demo'
 import * as serviceWorker from './serviceWorker'
+
+const store = createStore(reducers, compose(
+  // ...redux的中间件
+  window.devToolsExtension ? window.devToolsExtension() : f => f // 浏览器redux开发者工具支持
+))
 
 ReactDOM.render(
   (<BrowserRouter>

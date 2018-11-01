@@ -9,7 +9,7 @@ class App extends Component {
           <h3>私人订制 react-scripts</h3>
         </header>
       </div>
-    );
+    )
   }
 }
 
