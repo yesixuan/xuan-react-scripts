@@ -9,7 +9,7 @@ function Demo({ count, add, minus, dispatch }) {
       <header className="App-header">
         <h3 onClick={minus.bind(null, 2)}>减2</h3>
         <h3 onClick={() => minus(3)}>减3</h3>
-        <h3 onClick={() => dispatch({type: 'INCREMENT_ASYNC'})}>异步操作</h3>
+        <h3 onClick={() => dispatch({type: 'INCREMENT_ASYNC', payload: 88})}>异步操作</h3>
       </header>
     </div>
   )

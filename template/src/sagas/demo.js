@@ -4,7 +4,8 @@ const INCREMENT_ASYNC = 'INCREMENT_ASYNC'
 
 
 // 我们的干活的 Saga: 将执行 异步加一 。
-function* incrementAsync() {
+function* incrementAsync(action) {
+  console.log('action', action) // 这里可以拿到 action 传参
   for(let i = 0; i < 3; i++) {
     yield call(delay, 1000)
     yield put({type: 'ADD_NUM'})
