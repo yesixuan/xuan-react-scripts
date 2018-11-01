@@ -245,6 +245,10 @@ module.exports = {
               // @remove-on-eject-end
               plugins: [
                 [
+                  require.resolve('@babel/plugin-proposal-decorators'),
+                  {decoratorsBeforeExport: true}
+                ],
+                [
                   require.resolve('babel-plugin-named-asset-import'),
                   {
                     loaderMap: {

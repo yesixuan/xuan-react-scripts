@@ -318,6 +318,10 @@ module.exports = {
               // @remove-on-eject-end
               plugins: [
                 [
+                  require.resolve('@babel/plugin-proposal-decorators'),
+                  {decoratorsBeforeExport: true}
+                ],
+                [
                   require.resolve('babel-plugin-named-asset-import'),
                   {
                     loaderMap: {
@@ -536,7 +540,7 @@ module.exports = {
     new WorkboxWebpackPlugin.GenerateSW({
       clientsClaim: true,
       exclude: [/\.map$/, /asset-manifest\.json$/],
-      importWorkboxFrom: 'cdn',
+      importWorkboxFrom: 'local',
       navigateFallback: publicUrl + '/index.html',
       navigateFallbackBlacklist: [
         // Exclude URLs starting with /_, as they're likely an API call
