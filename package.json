@@ -1,6 +1,6 @@
 {
   "name": "xuan-react-scripts",
-  "version": "0.0.47",
+  "version": "0.0.50",
   "description": "Configuration and scripts for Create React App.",
   "repository": "yesixuan/create-react-app",
   "license": "MIT",
@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "@babel/core": "7.1.0",
+    "@babel/plugin-proposal-decorators": "^7.1.2",
     "@svgr/webpack": "2.4.1",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "9.0.0",
@@ -74,7 +75,6 @@
     "workbox-webpack-plugin": "3.6.2"
   },
   "devDependencies": {
-    "@babel/plugin-proposal-decorators": "^7.1.2",
     "react": "^16.3.2",
     "react-dom": "^16.3.2"
   },

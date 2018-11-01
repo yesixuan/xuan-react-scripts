@@ -1,5 +1,6 @@
 const ADD_NUM = 'ADD_NUM'
 const MINUS_NUM = 'MINUS_NUM'
+const INCREMENT_ASYNC = 'INCREMENT_ASYNC'
 
 const initialState = {
   count: 0
@@ -30,3 +31,8 @@ export function minus(data = 3) { // 带参action
     payload: data
   }
 }
+
+export const addAsync = params => ({
+  type: INCREMENT_ASYNC,
+  payload: params
+})
