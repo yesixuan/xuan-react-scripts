@@ -1,9 +1,20 @@
-import { combineReducers } from 'redux'
-
+import createSagaMiddleware from 'redux-saga'
+import rootSaga from '../sagas'
+import { createStore, combineReducers, applyMiddleware, compose } from 'redux'
 import demo from './demo.reducer'
-// ... 更多子reducer
 
-export default combineReducers({
+const reducers = combineReducers({
   demo
   // ... 更多子reducer
 })
+
+const sagaMiddleware = createSagaMiddleware()
+
+const store = createStore(reducers, compose(
+  applyMiddleware(sagaMiddleware),
+  window.devToolsExtension ? window.devToolsExtension() : f => f // 浏览器redux开发者工具支持
+))
+
+sagaMiddleware.run(rootSaga)
+
+export default store
