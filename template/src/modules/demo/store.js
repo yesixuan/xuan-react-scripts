@@ -1,17 +1,17 @@
-const ADD_NUM = 'ADD_NUM'
-const MINUS_NUM = 'MINUS_NUM'
-export const INCREMENT_ASYNC = 'INCREMENT_ASYNC'
+import {
+  DEMO_ADD_NUM, DEMO_MINUS_NUM, DEMO_INCREMENT_ASYNC
+} from '../../store/actionTypes'
 
 const initialState = {
   count: 0
 }
 
-// reducer
 export default function (state = initialState, { type, payload }) {
   switch (type) {
-    case ADD_NUM:
+    case DEMO_ADD_NUM:
+      console.log('test-saga')
       return { count: state.count + 1 }
-    case MINUS_NUM:
+    case DEMO_MINUS_NUM:
       return { count: state.count - payload }
     default:
       return state
@@ -21,18 +21,18 @@ export default function (state = initialState, { type, payload }) {
 // action creators
 export function add() { // 无参action
   return {
-    type: ADD_NUM
+    type: DEMO_ADD_NUM
   }
 }
 export function minus(data = 3) { // 带参action
   return {
-    type: MINUS_NUM,
+    type: DEMO_MINUS_NUM,
     payload: data
   }
 }
 
 export const addAsync = params => ({
-  type: INCREMENT_ASYNC,
+  type: DEMO_INCREMENT_ASYNC,
   payload: params
 })
 

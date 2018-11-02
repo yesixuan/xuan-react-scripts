@@ -1,25 +1,21 @@
-import React from 'react';
-import { bindActionCreators } from "redux";
-import { connect } from 'react-redux'
-import { add, minus, addAsync } from './index.store'
+import React from 'react'
+import { Switch, Route, Link } from 'react-router-dom'
 
-function Index({ count, add, minus, addAsync, dispatch }) {
+import Default from './default'
+import TestSaga from './test-saga'
+
+function Index({ match }) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h3 onClick={minus.bind(null, 2)}>减2</h3>
-        <h3 onClick={() => minus(3)}>减3</h3>
-        <h3 onClick={() => addAsync()}>异步操作dfg</h3>
+    <div>
+      <header>
+        <Link to={`${match.url}/saga`}>redux-saga 演示页</Link>
       </header>
+      <Switch>
+        <Route path={`${match.path}`} exact component={Default} />
+        <Route path={`${match.path}/saga`} component={TestSaga} />
+      </Switch>
     </div>
   )
 }
 
-const mapState = ({ demo }) => demo // 最终注入到 props 中的是 demo 中的每一个属性
-const mapDispatch = dispatch => ({
-  dispatch,
-  ...bindActionCreators({ add, minus, addAsync }, dispatch)
-})
-// const mapDispatch = dispatch => bindActionCreators({ add, minus }, dispatch)
-
-export default connect(mapState, mapDispatch)(Index);
+export default Index

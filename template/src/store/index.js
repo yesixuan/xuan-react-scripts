@@ -2,10 +2,12 @@ import createSagaMiddleware from 'redux-saga'
 import rootSaga from '../sagas'
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux'
 // import reducers from './store/index'
-import demo from '../modules/demo/index.store'
+import demo from '../modules/demo/store'
+import testSaga from '../modules/demo/test-saga/store'
 
 const reducers = combineReducers({
-  demo
+  demo,
+  testSaga
   // ... 更多子reducer
 })
 

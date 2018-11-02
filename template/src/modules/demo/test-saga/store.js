@@ -1,0 +1,38 @@
+import {
+  ADD_NUM, MINUS_NUM, INCREMENT_ASYNC
+} from '../../../store/actionTypes'
+
+const initialState = {
+  count: 0
+}
+
+// reducer
+export default function (state = initialState, { type, payload }) {
+  switch (type) {
+    case ADD_NUM:
+      return { count: state.count + 1 }
+    case MINUS_NUM:
+      return { count: state.count - payload }
+    default:
+      return state
+  }
+}
+
+// action creators
+export function add() { // 无参action
+  return {
+    type: ADD_NUM
+  }
+}
+export function minus(data = 3) { // 带参action
+  return {
+    type: MINUS_NUM,
+    payload: data
+  }
+}
+
+export const addAsync = params => ({
+  type: INCREMENT_ASYNC,
+  payload: params
+})
+
