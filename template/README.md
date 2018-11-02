@@ -10,6 +10,10 @@ create-react-app [project-name] --scripts-version xuan-react-scripts
 
 在官方**create-react-app**的基础上添加新特性
 
-## 样式
+## 路由支持支持
 
-## 支持
+演示路径： /demo
+
+## redux、redux-saga 的支持
+
+演示路径： /demo/saga

@@ -14,7 +14,7 @@ ReactDOM.render(
     <BrowserRouter>
       <Switch>
         <Route path='/' exact component={Index}/>
-        <Route path='/demo' exact component={Demo}/>
+        <Route path='/demo' component={Demo}/>
         <Redirect to='/' />
       </Switch>
     </BrowserRouter>

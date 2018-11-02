@@ -6,7 +6,7 @@ class Index extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h3>私人订制 react--scripts 总是</h3>
+          <h3>私人订制 react--scripts</h3>
         </header>
       </div>
     )
