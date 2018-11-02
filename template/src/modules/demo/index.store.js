@@ -1,6 +1,6 @@
 const ADD_NUM = 'ADD_NUM'
 const MINUS_NUM = 'MINUS_NUM'
-const INCREMENT_ASYNC = 'INCREMENT_ASYNC'
+export const INCREMENT_ASYNC = 'INCREMENT_ASYNC'
 
 const initialState = {
   count: 0
@@ -12,7 +12,6 @@ export default function (state = initialState, { type, payload }) {
     case ADD_NUM:
       return { count: state.count + 1 }
     case MINUS_NUM:
-      console.log('type, payload', type, payload)
       return { count: state.count - payload }
     default:
       return state
@@ -36,3 +35,4 @@ export const addAsync = params => ({
   type: INCREMENT_ASYNC,
   payload: params
 })
+

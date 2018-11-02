@@ -5,15 +5,15 @@ import { Provider } from 'react-redux'
 import store from './store'
 
 import './index.css'
-import App from './App'
-import Demo from './components/Demo'
+import Index from './modules/main/index.jsx'
+import Demo from './modules/demo/index'
 import * as serviceWorker from './serviceWorker'
 
 ReactDOM.render(
   (<Provider store={store}>
     <BrowserRouter>
       <Switch>
-        <Route path='/' exact component={App}/>
+        <Route path='/' exact component={Index}/>
         <Route path='/demo' exact component={Demo}/>
         <Redirect to='/' />
       </Switch>

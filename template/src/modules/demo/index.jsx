@@ -1,15 +1,15 @@
 import React from 'react';
 import { bindActionCreators } from "redux";
 import { connect } from 'react-redux'
-import { add, minus, addAsync } from '../store/demo.reducer'
+import { add, minus, addAsync } from './index.store'
 
-function Demo({ count, add, minus, addAsync, dispatch }) {
+function Index({ count, add, minus, addAsync, dispatch }) {
   return (
     <div className="App">
       <header className="App-header">
         <h3 onClick={minus.bind(null, 2)}>减2</h3>
         <h3 onClick={() => minus(3)}>减3</h3>
-        <h3 onClick={() => addAsync(88)}>异步操作</h3>
+        <h3 onClick={() => addAsync()}>异步操作dfg</h3>
       </header>
     </div>
   )
@@ -22,4 +22,4 @@ const mapDispatch = dispatch => ({
 })
 // const mapDispatch = dispatch => bindActionCreators({ add, minus }, dispatch)
 
-export default connect(mapState, mapDispatch)(Demo);
+export default connect(mapState, mapDispatch)(Index);

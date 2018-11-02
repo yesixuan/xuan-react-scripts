@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
-import './App.css';
+import './index.css';
 
-class App extends Component {
+class Index extends Component {
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <h3>私人订制 react-scripts</h3>
+          <h3>私人订制 react--scripts 总是</h3>
         </header>
       </div>
     )
   }
 }
 
-export default App;
+export default Index
