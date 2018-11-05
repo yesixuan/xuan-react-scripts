@@ -1,6 +1,6 @@
-import {
-  DEMO_ADD_NUM, DEMO_MINUS_NUM, DEMO_INCREMENT_ASYNC
-} from '../../store/actionTypes'
+export const DEMO_ADD_NUM = 'DEMO_ADD_NUM'
+export const DEMO_MINUS_NUM = 'DEMO_MINUS_NUM'
+export const DEMO_INCREMENT_ASYNC = 'DEMO_INCREMENT_ASYNC'
 
 const initialState = {
   count: 0

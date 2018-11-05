@@ -1,7 +1,7 @@
 import { delay } from 'redux-saga'
 import { put, call, takeEvery, all } from 'redux-saga/effects'
 import { add } from './store'
-import { DEMO_INCREMENT_ASYNC } from '../../store/actionTypes'
+import { DEMO_INCREMENT_ASYNC } from './store'
 
 import testSaga from './test-saga/sagas'
 
