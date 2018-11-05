@@ -10,6 +10,15 @@ create-react-app [project-name] --scripts-version xuan-react-scripts
 
 在官方**create-react-app**的基础上添加新特性
 
+## 样式
+
+- 支持 sass scss stylus
+
+- 支持 css-module
+
+- 支持 variables mixins 自动注入
+
+
 ## 路由支持支持
 
 演示路径： /demo

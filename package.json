@@ -1,14 +1,14 @@
 {
   "name": "xuan-react-scripts",
-  "version": "0.0.63",
+  "version": "0.0.66",
   "description": "Configuration and scripts for Create React App.",
-  "repository": "yesixuan/create-react-app",
+  "repository": "yesixuan/xuan-react-scripts",
   "license": "MIT",
   "engines": {
     "node": ">=6"
   },
   "bugs": {
-    "url": "https://github.com/yesixuan/xuan-create-react-app"
+    "url": "https://github.com/yesixuan/xuan-react-scripts"
   },
   "files": [
     "bin",
@@ -68,6 +68,8 @@
     "resolve": "1.8.1",
     "sass-loader": "7.1.0",
     "style-loader": "0.23.0",
+    "style-resources-loader": "^1.2.1",
+    "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
     "terser-webpack-plugin": "1.1.0",
     "url-loader": "1.1.1",
@@ -78,8 +80,7 @@
   },
   "devDependencies": {
     "react": "^16.3.2",
-    "react-dom": "^16.3.2",
-    "style-resources-loader": "^1.2.1"
+    "react-dom": "^16.3.2"
   },
   "optionalDependencies": {
     "fsevents": "1.2.4"
