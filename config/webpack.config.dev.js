@@ -347,16 +347,27 @@ module.exports = {
               'sass-loader'
             ),
           },
-            {
-                test: stylusRegex,
-                exclude: stylusModuleRegex,
-                use: getStyleLoaders({ importLoaders: 2 }, 'stylus-loader'),
-            },
-            // Adds support for CSS Modules, but using SASS
-            // using the extension .module.scss or .module.sass
-            {
-              test: stylusModuleRegex,
-              use: getStyleLoaders(
+          {
+              test: stylusRegex,
+              exclude: stylusModuleRegex,
+              use: [
+                ...getStyleLoaders({ importLoaders: 2 }, 'stylus-loader'),
+                {
+                  loader: 'style-resources-loader',
+                  options: {
+                    patterns: [
+                      path.resolve(paths.appSrc, 'assets/styles/auto-inject/*.styl'),
+                    ]
+                  }
+                }
+              ],
+          },
+          // Adds support for CSS Modules, but using SASS
+          // using the extension .module.scss or .module.sass
+          {
+            test: stylusModuleRegex,
+            use: [
+              ...getStyleLoaders(
                 {
                   importLoaders: 2,
                   modules: true,
@@ -364,7 +375,16 @@ module.exports = {
                 },
                 'stylus-loader'
               ),
-            },
+              {
+                loader: 'style-resources-loader',
+                options: {
+                  patterns: [
+                    path.resolve(paths.appSrc, 'assets/styles/auto-inject/*.styl'),
+                  ]
+                }
+              }
+            ],
+          },
           // "file" loader makes sure those assets get served by WebpackDevServer.
           // When you `import` an asset, you get its (virtual) filename.
           // In production, they would get copied to the `build` folder.
