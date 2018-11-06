@@ -8,7 +8,7 @@
 ## 基于`xuan-react-scripts`创建项目
 
 ```bash
-create-react-app [project-name] --scripts-version xuan-react-scripts
+create-react-app [project-name] --scripts-version @react-script/normal
 ```
 
 ## 样式

@@ -87,6 +87,11 @@ const getStyleLoaders = (cssOptions, preProcessor) => {
             },
             stage: 3,
           }),
+          require('postcss-pxtorem')({
+            rootValue: 75, // 除数基数
+            propList: ['*', '!font-size*'], // 匹配所有属性，除了 font-size
+            minPixelValue: 2 // 设置要替换的最小像素值
+          })
         ],
         sourceMap: shouldUseSourceMap,
       },

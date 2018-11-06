@@ -66,6 +66,11 @@ const getStyleLoaders = (cssOptions, preProcessor) => {
             },
             stage: 3,
           }),
+          require('postcss-pxtorem')({
+            rootValue: 75,      // 除数基数
+            propList: ['*', '!font-size*'], // 匹配所有属性，除了 font-size
+            minPixelValue: 2    //设置要替换的最小像素值
+          })
         ],
       },
     },
@@ -348,19 +353,19 @@ module.exports = {
             ),
           },
           {
-              test: stylusRegex,
-              exclude: stylusModuleRegex,
-              use: [
-                ...getStyleLoaders({ importLoaders: 2 }, 'stylus-loader'),
-                {
-                  loader: 'style-resources-loader',
-                  options: {
-                    patterns: [
-                      path.resolve(paths.appSrc, 'assets/styles/auto-inject/*.styl'),
-                    ]
-                  }
+            test: stylusRegex,
+            exclude: stylusModuleRegex,
+            use: [
+              ...getStyleLoaders({ importLoaders: 2 }, 'stylus-loader'),
+              {
+                loader: 'style-resources-loader',
+                options: {
+                  patterns: [
+                    path.resolve(paths.appSrc, 'assets/styles/auto-inject/*.styl'),
+                  ]
                 }
-              ],
+              }
+            ],
           },
           // Adds support for CSS Modules, but using SASS
           // using the extension .module.scss or .module.sass
