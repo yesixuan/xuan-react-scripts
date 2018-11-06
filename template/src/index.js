@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import store from './store'
 
-import './index.css'
+import './assets/styles/index.styl'
 import Index from './modules/main/index.jsx'
 import Demo from './modules/demo/index'
 import * as serviceWorker from './serviceWorker'
